@@ -16,5 +16,5 @@ pip install djangorestframework
 react-hook-forms =
 npm install react-hook-form
 
-Django-rest-knox =
+Django-rest-knox (venv harus aktif) =
 pip install django-rest-knox
