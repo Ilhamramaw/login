@@ -11,4 +11,17 @@ const AxiosInstance = axios.create({
   }
 })
 
+AxiosInstance.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("Token"); // Ambil token dari localStorage
+    if (token) {
+      config.headers["Authorization"] = `Token ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
 export default AxiosInstance
