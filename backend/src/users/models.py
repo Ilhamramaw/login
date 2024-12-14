@@ -21,10 +21,18 @@ class CustomUserManager(BaseUserManager):
 # Create your models here.
 class CustomUser(AbstractUser):
     email = models.EmailField(max_length=50, unique=True)
-    tgl_lahir = models.DateField(null=True, blank=True)
+    # no_telp = models.DateField(null=True, blank=True)
     username = models.CharField(max_length=200, null=True, blank=True)
 
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
+
+# class role(models.Model):
+#     id_role = models.CharField(max_length=2, primary_key=True)
+#     nama_role = models.CharField(max_length=50)
+
+#     def __str__(self):
+        
+#         return self.nama_role
